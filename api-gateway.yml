@@ -13,38 +13,50 @@ spring:
           uri: lb://auth-service
           predicates:
             - Path=/auth/**
+          filters:
+            - StripPrefix=1
 
         - id: user-service
-  uri: lb://user-service
-  predicates:
-    - Path=/user/**
-  filters:
-    - StripPrefix=1
-    
+          uri: lb://user-service
+          predicates:
+            - Path=/user/**
+          filters:
+            - StripPrefix=1
+
         - id: crop-service
           uri: lb://crop-service
           predicates:
             - Path=/crop/**
+          filters:
+            - StripPrefix=1
 
         - id: order-service
           uri: lb://order-service
           predicates:
             - Path=/order/**
+          filters:
+            - StripPrefix=1
 
         - id: dealer-service
           uri: lb://dealer-service
           predicates:
             - Path=/dealer/**
+          filters:
+            - StripPrefix=1
 
         - id: farmer-service
           uri: lb://farmer-service
           predicates:
             - Path=/farmer/**
+          filters:
+            - StripPrefix=1
 
         - id: admin-service
           uri: lb://admin-service
           predicates:
             - Path=/admin/**
+          filters:
+            - StripPrefix=1
 
 eureka:
   client:
