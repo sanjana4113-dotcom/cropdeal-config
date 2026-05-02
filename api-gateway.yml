@@ -15,10 +15,12 @@ spring:
             - Path=/auth/**
 
         - id: user-service
-          uri: lb://user-service
-          predicates:
-            - Path=/user/**
-
+  uri: lb://user-service
+  predicates:
+    - Path=/user/**
+  filters:
+    - StripPrefix=1
+    
         - id: crop-service
           uri: lb://crop-service
           predicates:
