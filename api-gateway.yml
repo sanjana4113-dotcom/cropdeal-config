@@ -4,7 +4,6 @@ server:
 spring:
   application:
     name: api-gateway
-spring:
   cloud:
     gateway:
       globalcors:
@@ -14,12 +13,7 @@ spring:
             allowedMethods: "*"
             allowedHeaders: "*"
             allowCredentials: true
-
-
-  cloud:
-    gateway:
       routes:
-
         - id: auth-service
           uri: lb://auth-service
           predicates:
